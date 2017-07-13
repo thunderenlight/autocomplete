@@ -2,10 +2,19 @@ class UsersController < ApplicationController
 	before_filter :find_model
 
 	def index
-		@users = User.all
-		
+		respond_to do |format|
+			if params[:term]
+				@users = User.search_by_full_name(params[:term]).with_pg_search_highlight
+			else
+				@users = User.all
+			end
+
+			format.json
+			format.html
+		end
 	end
 	
+
 
 	private
 	def find_model

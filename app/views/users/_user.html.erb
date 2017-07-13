@@ -1,3 +1,7 @@
 <li>
-	<%= user.name %> <%= user.surname %>
+	<% if user.respond_to?(:pg_search_highlight)  %>
+		<%= user.pg_search_highlight.html_safe %>	
+	<% else %>
+		<%= user.name %> <%= user.surname %>
+	<% end %>
 </li>
