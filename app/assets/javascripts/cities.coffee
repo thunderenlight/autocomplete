@@ -4,7 +4,7 @@
 template = (item) -> item.text
 
 jQuery(document).on 'turbolinks:load', ->
-  $('#to').select2
+  $('#city').select2
     ajax: {
       url: '/users'
       data: (params) ->
