@@ -25,7 +25,7 @@ development:
   <<: *default
   database: Autocomplete_development
   host: localhost
-  user: < %= ENV["PG_USER"] %>
+  # user: < %= ENV["PG_USER"] %>
   password: < %= ENV["PG_PASS"] %>
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
